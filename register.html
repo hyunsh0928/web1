@@ -8,7 +8,7 @@
     /* 여기에 회원가입 페이지의 스타일을 추가할 수 있어요. */
     /* ... */
     body {
-      background-color: #B4D4FF;
+      background-color: #7BD3EA;
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
@@ -43,7 +43,7 @@
     input[type="password"],
     input[type="email"],
     input[type="button"] {
-      width: calc(100% - 10px); /* 오른쪽으로 표시될 아이콘 공간 확보 */
+      width: calc(100% - 30px); /* 오른쪽으로 표시될 아이콘 공간 확보 */
       padding: 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
@@ -68,14 +68,13 @@
       margin-top: 5px;
     }
 
-    .checkmark {
-      position: absolute;
-      top: 50%;
-      right: 5px;
-      transform: translateY(-50%);
-      font-size: 18px;
-      color: green; /* 아이콘 색상 */
-    }
+.checkmark {
+  display: inline-block;
+  width: 20px; /* 아이콘 너비 조정 */
+  text-align: center;
+  margin-left: 5px; /* 입력란과의 간격 조정 */
+  color: green;
+}
 
   </style>
 </head>
@@ -135,19 +134,20 @@
       checkmark.innerHTML = username ? '✔️' : '';
     }
 
-    function checkEmail() {
-      var email = document.getElementById("email").value;
-      var checkmark = document.getElementById("emailCheck");
-      var mismatchError = document.getElementById("emailMismatch");
+function checkEmail() {
+  var email = document.getElementById("email").value;
+  var checkmark = document.getElementById("emailCheck");
+  var mismatchError = document.getElementById("emailMismatch");
 
-      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email === '') {
-        checkmark.innerHTML = '✔️';
-        mismatchError.style.display = 'none';
-      } else {
-        checkmark.innerHTML = '';
-        mismatchError.style.display = 'block';
-      }
-    }
+  if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email === '') {
+    checkmark.innerHTML = email ? '✔️' : ''; // 이메일 값이 비어있을 때도 체크 표시를 지웁니다.
+    mismatchError.style.display = 'none';
+  } else {
+    checkmark.innerHTML = '';
+    mismatchError.style.display = 'block';
+  }
+}
+
 
     function checkPassword() {
       var password = document.getElementById("password").value;

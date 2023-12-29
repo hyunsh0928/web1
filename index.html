@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>메인화면 |</title>
-  <style>
+<style>
   body {
     background-color: #7BD3EA;
     margin: 0;
@@ -61,6 +61,10 @@
       display: inline-block;
     }
 
+    #passwordInput {
+      padding-right: 40px; /* 오른쪽 여백 조정 */
+    }
+
     .password-toggle {
       position: absolute;
       top: 50%;
@@ -69,8 +73,8 @@
       cursor: pointer;
     }
 
-    #passwordInput {
-      padding-right: 30px; /* 버튼이 겹치지 않도록 오른쪽 패딩 추가 */
+    .password-toggle img {
+      width: 20px;
     }
     .checkbox {
       display: flex;
@@ -82,7 +86,7 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      margin-top: 10px;
+      margin-top: 5px;
     }
     .signup-link {
       cursor: pointer;
@@ -102,7 +106,7 @@
           <input type="password" id="passwordInput" placeholder="PW">
           <!-- 눈 모양 클릭 시 비밀번호 보이기/가리기 기능 -->
           <span class="password-toggle" onclick="togglePasswordVisibility()">
-            👁
+            <img id="toggleImage" src="open.png" alt="눈을감은이미지">
           </span>
         </div>
         <!-- 자동 로그인 체크박스와 텍스트 -->
@@ -128,10 +132,14 @@
     // 비밀번호 보이기/가리기 기능을 하는 함수입니다.
     function togglePasswordVisibility() {
       var passwordInput = document.getElementById('passwordInput');
+      var toggleImage = document.getElementById('toggleImage');
+
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
+        toggleImage.src = 'close.png'; // 보이기일 때 이미지 변경
       } else {
         passwordInput.type = 'password';
+        toggleImage.src = 'open.png'; // 가리기일 때 이미지 변경
       }
     }
   </script>
