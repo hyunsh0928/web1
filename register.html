@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입 | helpme_coder</title>
+  <style>
+    /* 여기에 회원가입 페이지의 스타일을 추가할 수 있어요. */
+    /* ... */
+    body {
+      background-color: #B4D4FF;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .Sign-up form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .input-container {
+      position: relative;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="button"] {
+      width: calc(100% - 10px); /* 오른쪽으로 표시될 아이콘 공간 확보 */
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    input[type="button"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+      background-color: #45a049;
+    }
+
+    .error-message {
+      color: red;
+      display: none;
+      position: relative;
+      z-index: 1;
+      margin-top: 5px;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: green; /* 아이콘 색상 */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="Sign-up form">
+      <header>회원가입</header>
+      <form id="signupForm">
+        <div class="input-container">
+          <input type="text" placeholder="이름" id="name" onkeyup="checkName()" autocomplete="off">
+          <span id="nameCheck" class="checkmark"></span>
+        </div>
+
+        <div class="input-container">
+          <input type="text" placeholder="아이디" id="username" onkeyup="checkUsername()" autocomplete="off">
+          <span id="usernameCheck" class="checkmark"></span>
+        </div>
+
+        <div class="input-container">
+          <input type="email" placeholder="이메일" id="email" onkeyup="checkEmail()" autocomplete="off">
+          <span id="emailCheck" class="checkmark"></span>
+          <div id="emailMismatch" class="error-message emailMismatch">이메일 형식이 올바르지 않습니다.</div>
+        </div>
+
+        <div class="input-container">
+          <input type="password" placeholder="비밀번호" id="password" onkeyup="checkPassword()" autocomplete="off">
+          <span id="passwordCheck" class="checkmark"></span>
+        </div>
+
+        <div class="input-container">
+          <input type="password" placeholder="비밀번호 확인" id="confirmPassword" onkeyup="checkConfirmPassword()" autocomplete="off">
+          <span id="confirmPasswordCheck" class="checkmark"></span>
+          <div id="passwordMismatch" class="error-message passwordMismatch">비밀번호가 일치하지 않습니다.</div>
+        </div>
+
+        <input type="button" class="button" value="가입하기" onclick="validateInputs()">
+        <div id="errorMessage" class="error-message">모든 입력 란을 정확히 입력해주세요.</div>
+      </form>
+      <div class="login">
+        <span class="login">이미 계정이 있으신가요?
+          <a href="login.html">로그인</a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function checkName() {
+      var name = document.getElementById("name").value;
+      var checkmark = document.getElementById("nameCheck");
+      checkmark.innerHTML = name ? '✔️' : '';
+    }
+
+    function checkUsername() {
+      var username = document.getElementById("username").value;
+      var checkmark = document.getElementById("usernameCheck");
+      checkmark.innerHTML = username ? '✔️' : '';
+    }
+
+    function checkEmail() {
+      var email = document.getElementById("email").value;
+      var checkmark = document.getElementById("emailCheck");
+      var mismatchError = document.getElementById("emailMismatch");
+
+      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email === '') {
+        checkmark.innerHTML = '✔️';
+        mismatchError.style.display = 'none';
+      } else {
+        checkmark.innerHTML = '';
+        mismatchError.style.display = 'block';
+      }
+    }
+
+    function checkPassword() {
+      var password = document.getElementById("password").value;
+      var checkmark = document.getElementById("passwordCheck");
+      checkmark.innerHTML = password ? '✔️' : '';
+      checkConfirmPassword(); // 비밀번호 확인과의 일치 여부도 확인
+    }
+
+    function checkConfirmPassword() {
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+      var checkmark = document.getElementById("confirmPasswordCheck");
+      var mismatchError = document.getElementById("passwordMismatch");
+
+      if ((password === confirmPassword && password !== '') || confirmPassword === '') {
+        checkmark.innerHTML = confirmPassword ? '✔️' : '';
+        mismatchError.style.display = 'none';
+      } else {
+        checkmark.innerHTML = '';
+        mismatchError.style.display = 'block';
+      }
+    }
+
+    function validateInputs() {
+      var name = document.getElementById("name").value;
+      var username = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+      var errorMessage = document.getElementById("errorMessage");
+      var mismatchError = document.getElementById("passwordMismatch");
+
+      if (name && username && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && password && confirmPassword === password) {
+        alert("가입이 완료되었습니다.");
+        window.location.href = "login.html"; // 로그인 페이지로 이동
+      } else {
+        errorMessage.style.display = 'block';
+        setTimeout(function() {
+          errorMessage.style.display = 'none';
+        }, 2000); // 2초 뒤에 errorMessage 숨김
+      }
+    }
+
+    // 입력값이 변경될 때마다 확인하여 error-message를 자동으로 제거
+    var inputs = document.querySelectorAll('input[type="text"], input[type="password"], input[type="email"]');
+    inputs.forEach(function(input) {
+      input.addEventListener('input', function() {
+        var errorMessage = document.getElementById("errorMessage");
+        errorMessage.style.display = 'none';
+
+        var id = this.getAttribute('id');
+        var mismatchError = document.getElementById(id + "Mismatch");
+        if (mismatchError) {
+          mismatchError.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

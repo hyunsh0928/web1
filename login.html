@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인화면 |</title>
+  <style>
+  body {
+    background-color: #7BD3EA;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 400px; /* 폼의 최대 너비 설정 */
+    width: 100%; /* 폼의 너비를 최대 너비로 설정 */
+    box-sizing: border-box;
+  }
+
+  .Sign-in form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  input[type="button"]:hover {
+    background-color: #45a049;
+  }
+
+  .signup {
+    margin-top: 10px;
+  }
+    .password-input {
+      position: relative;
+      display: inline-block;
+    }
+
+    .password-toggle {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    #passwordInput {
+      padding-right: 30px; /* 버튼이 겹치지 않도록 오른쪽 패딩 추가 */
+    }
+    .checkbox {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .checkbox {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .signup-link {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="Sign-in form">
+      <header>Sign in</header>
+      <form action="#">
+        <input type="text" placeholder="ID">
+        <!-- 비밀번호 입력란 -->
+        <div class="password-input">
+          <input type="password" id="passwordInput" placeholder="PW">
+          <!-- 눈 모양 클릭 시 비밀번호 보이기/가리기 기능 -->
+          <span class="password-toggle" onclick="togglePasswordVisibility()">
+            👁
+          </span>
+        </div>
+        <!-- 자동 로그인 체크박스와 텍스트 -->
+        <div class="checkbox">
+          <input type="checkbox" id="autoLogin">
+          <label for="autoLogin">자동 로그인</label>
+        </div>
+        <!-- 로그인 버튼 -->
+        <input type="button" class="button" value="Login">
+        <!-- Forgot password 링크 -->
+        <a href="링크_주소">비밀번호를 잊으셨나요?</a>
+        <!-- 회원가입 링크 -->
+        <div class="signup">
+          <span class="signup">계정이 없으신가요?
+            <a class="signup-link" href="register.html">회원가입</a>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // 비밀번호 보이기/가리기 기능을 하는 함수입니다.
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById('passwordInput');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    }
+  </script>
+</body>
+</html>
