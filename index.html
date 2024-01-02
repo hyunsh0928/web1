@@ -4,98 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>메인화면 |</title>
-<style>
-  body {
-    background-color: #7BD3EA;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-
-  .container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    max-width: 400px; /* 폼의 최대 너비 설정 */
-    width: 100%; /* 폼의 너비를 최대 너비로 설정 */
-    box-sizing: border-box;
-  }
-
-  .Sign-in form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  input[type="text"],
-  input[type="password"],
-  input[type="button"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-
-  input[type="button"] {
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-  }
-
-  input[type="button"]:hover {
-    background-color: #45a049;
-  }
-
-  .signup {
-    margin-top: 10px;
-  }
-    .password-input {
-      position: relative;
-      display: inline-block;
-    }
-
-    #passwordInput {
-      padding-right: 40px; /* 오른쪽 여백 조정 */
-    }
-
-    .password-toggle {
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-      cursor: pointer;
-    }
-
-    .password-toggle img {
-      width: 20px;
-    }
-    .checkbox {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      margin-top: 10px;
-    }
-    .checkbox {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      margin-top: 5px;
-    }
-    .signup-link {
-      cursor: pointer;
-      color: blue;
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="login_style.css">
 </head>
 <body>
+  <a href="index.html"> <!-- 메인 페이지 주소 입력 -->
+    <img src="main.png" alt="메인 페이지">
+  </a>
   <div class="container">
     <div class="Sign-in form">
       <header>Sign in</header>
@@ -127,21 +41,6 @@
       </form>
     </div>
   </div>
-
-  <script>
-    // 비밀번호 보이기/가리기 기능을 하는 함수입니다.
-    function togglePasswordVisibility() {
-      var passwordInput = document.getElementById('passwordInput');
-      var toggleImage = document.getElementById('toggleImage');
-
-      if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        toggleImage.src = 'close.png'; // 보이기일 때 이미지 변경
-      } else {
-        passwordInput.type = 'password';
-        toggleImage.src = 'open.png'; // 가리기일 때 이미지 변경
-      }
-    }
-  </script>
+  <script src="login_script.js"></script>
 </body>
 </html>
