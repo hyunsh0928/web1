@@ -1,5 +1,5 @@
 document.querySelector('img').addEventListener('click', function() {
-  window.location.href = 'index.html'; // 여기에 주소 입력
+  window.location.href = 'article.html'; // 여기에 주소 입력
 });
 
 function checkName() {
@@ -88,7 +88,7 @@ if ((password === confirmPassword && password !== '') || confirmPassword === '')
 
     if (name && username && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && password && confirmPassword === password) {
       alert("가입이 완료되었습니다.");
-      window.location.href = "index.html"; // 로그인 페이지로 이동
+      window.location.href = "article.html"; // 로그인 페이지로 이동
     } else {
       errorMessage.style.display = 'block';
       setTimeout(function() {
