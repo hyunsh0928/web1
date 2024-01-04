@@ -1,58 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입 | </title>
-  <link rel="stylesheet" href="register_style.css">
-</head>
-<body>
-  <a href="article.html"> <!-- 메인 페이지 주소 입력 -->
-    <img src="main.png" alt="메인 페이지">
-  </a>
-  <div class="container">
-    <div class="Sign-up form">
-      <header>회원가입</header>
-      <form id="signupForm">
-        <div class="input-container">
-          <input type="text" placeholder="이름" id="name" onkeyup="checkName()" autocomplete="off">
-          <span id="nameCheck" class="checkmark"></span>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 | </title>
+    <link rel="stylesheet" href="register_style.css">
+  </head>
+
+  <body>
+    <a href="article.html"> <!-- 메인 페이지 주소 입력 -->
+      <img src="main.png" alt="메인 페이지" class="main-logo">
+    </a>
+      
+    <div class="container">
+      <div class="Sign-up form">
+        <header>회원가입</header>
+
+        <form id="signupForm">
+          <div class="input-container">
+            <input type="text" placeholder="이름" id="name" onkeyup="checkName()" autocomplete="off">
+            <span id="nameCheck" class="checkmark"></span>
+          </div>
+
+          <div class="input-container">
+            <input type="text" placeholder="아이디" id="username" onkeyup="checkUsername()" autocomplete="off">
+            <span id="usernameCheck" class="checkmark"></span>
+            <div id="usernameLengthError" class="error-message" style="display: none;">아이디는 최소 6글자 입니다.</div>
+          </div>
+
+          <div class="input-container">
+            <input type="email" placeholder="이메일" id="email" onkeyup="checkEmail()" autocomplete="off">
+            <span id="emailCheck" class="checkmark"></span>
+            <div id="emailMismatch" class="error-message emailMismatch">이메일 형식이 올바르지 않습니다.</div>
+          </div>
+
+          <div class="input-container">
+            <input type="password" placeholder="비밀번호" id="password" onkeyup="checkPassword()" autocomplete="off">
+            <span id="passwordCheck" class="checkmark"></span>
+            <div id="passwordLengthError" class="error-message" style="display: none;">비밀번호는 최소 8자리입니다.</div>
+          </div>
+
+          <div class="input-container">
+            <input type="password" placeholder="비밀번호 확인" id="confirmPassword" onkeyup="checkConfirmPassword()" autocomplete="off">
+            <span id="confirmPasswordCheck" class="checkmark"></span>
+            <div id="passwordMismatch" class="error-message" style="display: none;">비밀번호가 일치하지 않습니다.</div>
+          </div>
+
+          <input type="button" class="button" value="가입하기" onclick="validateInputs()">
+          <div id="errorMessage" class="error-message">모든 입력 란을 정확히 입력해주세요.</div>
+        </form>
+
+        <div class="login">
+          <span class="login">이미 계정이 있으신가요?
+            <a href="index.html">로그인</a>
+          </span>
         </div>
 
-<div class="input-container">
-  <input type="text" placeholder="아이디" id="username" onkeyup="checkUsername()" autocomplete="off">
-  <span id="usernameCheck" class="checkmark"></span>
-  <div id="usernameLengthError" class="error-message" style="display: none;">아이디는 최소 6글자 입니다.</div>
-</div>
-
-        <div class="input-container">
-          <input type="email" placeholder="이메일" id="email" onkeyup="checkEmail()" autocomplete="off">
-          <span id="emailCheck" class="checkmark"></span>
-          <div id="emailMismatch" class="error-message emailMismatch">이메일 형식이 올바르지 않습니다.</div>
-        </div>
-
-<div class="input-container">
-  <input type="password" placeholder="비밀번호" id="password" onkeyup="checkPassword()" autocomplete="off">
-  <span id="passwordCheck" class="checkmark"></span>
-  <div id="passwordLengthError" class="error-message" style="display: none;">비밀번호는 최소 8자리입니다.</div>
-</div>
-
-<div class="input-container">
-  <input type="password" placeholder="비밀번호 확인" id="confirmPassword" onkeyup="checkConfirmPassword()" autocomplete="off">
-  <span id="confirmPasswordCheck" class="checkmark"></span>
-  <div id="passwordMismatch" class="error-message" style="display: none;">비밀번호가 일치하지 않습니다.</div>
-</div>
-
-        <input type="button" class="button" value="가입하기" onclick="validateInputs()">
-        <div id="errorMessage" class="error-message">모든 입력 란을 정확히 입력해주세요.</div>
-      </form>
-      <div class="login">
-        <span class="login">이미 계정이 있으신가요?
-          <a href="index.html">로그인</a>
-        </span>
       </div>
     </div>
-  </div>
-  <script src="register_script.js"></script>
-</body>
+
+    <script src="register_script.js"></script>
+  </body>
 </html>

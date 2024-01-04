@@ -1,78 +1,77 @@
 body {
-    background-color: #7BD3EA;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+  background-color: #7BD3EA;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  img {
-    width: 100px; /* 이미지의 너비 설정 */
-    height: auto; /* 높이 자동으로 조절 */
-    display: block; /* 이미지를 블록 요소로 설정하여 가운데 정렬을 용이하게 함 */
-    margin: 20px auto 0; /* 수평 중앙 정렬 및 위쪽 여백 추가 */
-    position: absolute; /* 절대 위치 지정 */
-    top: 20px; /* 위쪽 여백 조정 */
-    left: 50%; /* 왼쪽 여백을 부모 요소의 가로 너비의 절반으로 설정 */
-    transform: translateX(-50%); /* 가로 방향으로 요소의 너비의 절반만큼 이동하여 중앙에 위치시킴 */
-  }
-  
-  .container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    box-sizing: border-box;
-  }
+.main-logo {
+  width: 50px; /* 이미지의 너비 설정 */
+  height: auto; /* 높이 자동으로 조절 */
+  display: block; /* 이미지를 블록 요소로 설정하여 가운데 정렬을 용이하게 함 */
+  position: absolute; /* 절대 위치 지정 */
+  top: 5px; /* 위쪽 여백 조정 */
+  left: 5px; /* 왼쪽 여백을 부모 요소의 가로 너비의 절반으로 설정 */
+  z-index: 100;
+}
 
-  .Sign-up form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+.container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Sign-up form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .input-container {
-position: relative;
+  position: relative;
 }
 
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="button"] {
-    width: calc(100% - 30px);
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="button"] {
+  width: calc(100% - 30px);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
-  input[type="button"] {
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-  }
+input[type="button"] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
 
-  input[type="button"]:hover {
-    background-color: #45a049;
-  }
+input[type="button"]:hover {
+  background-color: #45a049;
+}
 
-  .error-message {
-    color: red;
-    display: none;
-    position: relative;
-    z-index: 1;
-  }
+.error-message {
+  color: red;
+  display: none;
+  position: relative;
+  z-index: 1;
+}
 
 .checkmark {
-display: inline-block;
-width: 20px;
-text-align: center;
-margin-left: 5px;
-color: green;
-}
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  margin-left: 5px;
+  color: green;
+  }

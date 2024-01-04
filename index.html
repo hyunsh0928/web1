@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>메인화면 |</title>
-  <link rel="stylesheet" href="login_style.css">
-</head>
-<body>
-  <div class="logo-container">
-    <a href="article.html">
-      <img src="main.png" alt="메인 페이지" class="main-logo">
-    </a>
-  </div>
-  <div class="container">
-    <div class="Sign-in form">
-      <header>Sign in</header>
-      <form action="#">
-        <input type="text" placeholder="ID">
-        <!-- 비밀번호 입력란 -->
-        <div class="password-input">
-          <input type="password" id="passwordInput" placeholder="PW">
-          <!-- 눈 모양 클릭 시 비밀번호 보이기/가리기 기능 -->
-          <span class="password-toggle" onclick="togglePasswordVisibility()">
-            <img id="toggleImage" src="open.png" alt="눈을감은이미지" class="PW-visibility">
-          </span>
-        </div>
-        <!-- 자동 로그인 체크박스와 텍스트 -->
-        <div class="checkbox">
-          <input type="checkbox" id="autoLogin">
-          <label for="autoLogin">자동 로그인</label>
-        </div>
-        <!-- 로그인 버튼 -->
-        <input type="button" class="button" value="Login" onclick="login()">
-        <!-- Forgot password 링크 -->
-        <a href="#" onclick="forgotPassword()">비밀번호를 잊으셨나요?</a>
-        <!-- 회원가입 링크 -->
-        <div class="signup">
-          <span class="signup">계정이 없으신가요?
-            <a class="signup-link" href="register.html">회원가입</a>
-          </span>
-        </div>
-      </form>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인화면 |</title>
+    <link rel="stylesheet" href="login_style.css">
+  </head>
+
+  <body>
+    <div class="logo-container">
+      <a href="article.html">
+        <img src="main.png" alt="메인 페이지" class="main-logo">
+      </a>
     </div>
-  </div>
-  <script src="login_script.js"></script>
-</body>
+    <div class="container">
+      <div class="Sign-in form">
+        <header>Sign in</header>
+        
+        <form action="#">
+          <input type="text" placeholder="ID">
+          <!-- 비밀번호 입력란 -->
+          <div class="password-input">
+            <input type="password" id="passwordInput" placeholder="PW">
+            <!-- 눈 모양 클릭 시 비밀번호 보이기/가리기 기능 -->
+            <span class="password-toggle" onclick="togglePasswordVisibility()">
+              <img id="toggleImage" src="open.png" alt="눈을감은이미지" class="PW-visibility">
+            </span>
+          </div>
+          <!-- 자동 로그인 체크박스와 텍스트 -->
+          <div class="checkbox">
+            <input type="checkbox" id="autoLogin">
+            <label for="autoLogin">자동 로그인</label>
+          </div>
+
+          <!-- 로그인 버튼 -->
+          <input type="button" class="button" value="Login" onclick="login()">
+          <!-- Forgot password 링크 -->
+
+          <a href="#" onclick="forgotPassword()">비밀번호를 잊으셨나요?</a>
+          <!-- 회원가입 링크 -->
+
+          <div class="signup">
+            <span class="signup">계정이 없으신가요?
+              <a class="signup-link" href="register.html">회원가입</a>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="login_script.js"></script>
+  </body>
 </html>
