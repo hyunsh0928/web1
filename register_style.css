@@ -17,6 +17,7 @@ body {
   top: 5px; /* 위쪽 여백 조정 */
   left: 5px; /* 왼쪽 여백을 부모 요소의 가로 너비의 절반으로 설정 */
   z-index: 100;
+  margin: 10px;
 }
 
 .container {

@@ -11,67 +11,76 @@
     <a href="article.html">
       <img src="main.png" alt="메인 페이지" class="main-logo">
     </a>
-
-    <a href="index.html" class="go-login">로그인
-    </a>
-
+    <!--                    (현재) 로그인 버튼 숨김
+    <a href="index.html" class="go-login">로그인</a>
+    -->
     <div class="boards">
-      <div class="board">
-        <div class="board-title">게시판 1</div>
-        <div class="post-container">
-      </div>
-    </div>
-
-    <div class="board">
-      <div class="board-title">게시판 2</div>
-      <div class="post-container">
-        <div class="posts">
-          <div class="post">게시글 A</div>
-          <div class="post">게시글 B</div>
+      <div class="board">           <!---4각-->
+        <div class="board-title">D4</div>
+        <div class="dice-result d4-result">결과값:</div>
+        <div class="button-container">
+          <input type="number" class="roll-count d4-roll-count" min="1" max="5" placeholder="">
+          <label for="d4-roll-count">Count</label>
+          <button id="d4-button" class="action-button">Roll</button>
         </div>
+        <div class="total-sum d4-sum">총합: 0</div>
       </div>
-    </div>
-
-    <div class="board">
-      <div class="board-title">게시판 3</div>
-      <div class="post-container">
-        <div class="posts">
-          <div class="post">게시글 A</div>
-          <div class="post">게시글 B</div>
+    
+      <div class="board">           <!---6각-->
+        <div class="board-title">D6</div>
+        <div class="dice-result d6-result">결과값:</div>
+        <div class="button-container">
+          <input type="number" class="roll-count d6-roll-count" min="1" max="5" placeholder="">
+          <label for="d6-roll-count">Count</label>
+          <button id="d6-button" class="action-button">Roll</button>
         </div>
+        <div class="total-sum d6-sum">총합: 0</div>
       </div>
-    </div>
 
-    <div class="board">
-      <div class="board-title">게시판 4</div>
-      <div class="post-container">
-        <div class="posts">
-          <div class="post">게시글 A</div>
-          <div class="post">게시글 B</div>
+      <div class="board">           <!---8각-->
+        <div class="board-title">D8</div>
+        <div class="dice-result d8-result">결과값:</div>
+        <div class="button-container">
+          <input type="number" class="roll-count d8-roll-count" min="1" max="5" placeholder="">
+          <label for="d8-roll-count">Count</label>
+          <button id="d8-button" class="action-button">Roll</button>
         </div>
+        <div class="total-sum d8-sum">총합: 0</div>
       </div>
-    </div>
 
-    <div class="board">
-      <div class="board-title">게시판 5</div>
-      <div class="post-container">
-        <div class="posts">
-          <div class="post">게시글 A</div>
-          <div class="post">게시글 B</div>
+      <div class="board">           <!---12각-->
+        <div class="board-title">D12</div>
+        <div class="dice-result d12-result">결과값:</div>
+        <div class="button-container">
+          <input type="number" class="roll-count d12-roll-count" min="1" max="5" placeholder="">
+          <label for="d12-roll-count">Count</label>
+          <button id="d12-button" class="action-button">Roll</button>
         </div>
+        <div class="total-sum d12-sum">총합: 0</div>
       </div>
-    </div>
 
-    <div class="board">
-      <div class="board-title">게시판 6</div>
-      <div class="post-container">
-        <div class="posts">
-          <div class="post">게시글 A</div>
-          <div class="post">게시글 B</div>
+      <div class="board">           <!---20각-->
+        <div class="board-title">D20</div>
+        <div class="dice-result d20-result">결과값:</div>
+        <div class="button-container">
+          <input type="number" class="roll-count d20-roll-count" min="1" max="5" placeholder="">
+          <label for="d20-roll-count">Count</label>
+          <button id="d20-button" class="action-button">Roll</button>
         </div>
+        <div class="total-sum d20-sum">총합: 0</div>
+      </div>
+
+      <div class="board">           <!---100각-->
+        <div class="board-title">D100</div>
+        <div class="dice-result d100-result">결과값:</div>
+        <div class="button-container">
+          <input type="number" class="roll-count d100-roll-count" min="1" max="5" placeholder="">
+          <label for="d100-roll-count">Count</label>
+          <button id="d100-button" class="action-button">Roll</button>
+        </div>
+        <div class="total-sum d100-sum">총합: 0</div>
       </div>
     </div>
-
     <script src="article_script.js"></script>
   </body>
 </html>
